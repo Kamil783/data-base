@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirInfo</title>
+    <link href="assets/img/icon2.png" type="image/png" rel="shortcut icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/main_page.css" rel="stylesheet">
+</head>
+
+<body class="entry">
+    <main>
+        <section class="entry-elements">
+            <div class="entry-elements-logo">
+                <img src="{% static 'Assets/image/logo4.png' %}" class="entry-elements-logo-img">
+            </div>
+            <div class="entry-elements-reg"> 
+                <form method="POST">         
+                    {% csrf_token %}
+                    <hr>
+                        {{ form.as_p }}
+                    <hr>
+                    <button type="submit" class="registerbtn">Go!</button>
+
+                    <div class="container signin">
+                        <p class="signin-text">Don't have an account? <a href="signup">Sign up</a>.</p>
+                    </div>
+                    <button type="submit" class="githubbtn">
+                        <img src="{% static 'Assets/image/github.png' %}" class="githubbtn-img">
+                    </button>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
